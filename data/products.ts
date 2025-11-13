@@ -13,16 +13,18 @@ export const products: Product[] = [
     slug: "signature-low-seating-bench",
     title: "Signature Low-Seating Bench",
     price: 35000,
-    description: "Handcrafted bench in oak with upholstered seat. Finishes available on request.",
-    images: ["/placeholder.png", "/placeholder.png", "/placeholder.png"]
+    description:
+      "Handcrafted bench in oak with upholstered seat. Finishes available on request.",
+    images: ["/placeholder.png", "/placeholder.png", "/placeholder.png"],
   },
   {
     id: 2,
     slug: "atelier-dining-chair",
     title: "Atelier Dining Chair",
     price: 12000,
-    description: "Curved-back dining chair with solid wood legs and fabric upholstery.",
-    images: ["/placeholder.png"]
+    description:
+      "Curved-back dining chair with solid wood legs and fabric upholstery.",
+    images: ["/sketch.png"],
   },
   {
     id: 3,
@@ -30,7 +32,7 @@ export const products: Product[] = [
     title: "Masonry Side Table",
     price: 8000,
     description: "Compact side table with stone top and brass inlay.",
-    images: ["/placeholder.png"]
+    images: ["/detail2.png"],
   },
   {
     id: 4,
@@ -38,7 +40,7 @@ export const products: Product[] = [
     title: "Studio Console",
     price: 22000,
     description: "Slim console with metal frame and walnut top.",
-    images: ["/placeholder.png"]
+    images: ["/main.png"],
   },
   {
     id: 5,
@@ -46,7 +48,7 @@ export const products: Product[] = [
     title: "Artisan Lamp",
     price: 4500,
     description: "Hand-blown glass lamp with brass fittings.",
-    images: ["/placeholder.png"]
+    images: ["/placeholder.png"],
   },
   {
     id: 6,
@@ -54,6 +56,6 @@ export const products: Product[] = [
     title: "Hearth Rug",
     price: 6000,
     description: "Handwoven rug in natural tones and textured weave.",
-    images: ["/placeholder.png"]
-  }
+    images: ["/placeholder.png"],
+  },
 ];
