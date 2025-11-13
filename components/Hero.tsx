@@ -1,36 +1,40 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
+
+const container: Variants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
+      when: "beforeChildren",
+    },
+  },
+};
+
+const item: Variants = {
+  hidden: { opacity: 0, y: 10 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
+const imageVariants: Variants = {
+  hidden: { opacity: 0, y: 8, scale: 0.995 },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+  },
+  hover: { scale: 1.03, transition: { duration: 0.25 } },
+};
 
 export default function Hero() {
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.12,
-        when: "beforeChildren",
-      },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 10 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
-  };
-
-  const imageVariants = {
-    hidden: { opacity: 0, y: 8, scale: 0.995 },
-    show: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: { duration: 0.7, ease: "easeOut" },
-    },
-    hover: { scale: 1.03, transition: { duration: 0.25 } },
-  };
-
   return (
     <section className="pt-16 pb-12">
       <motion.div
