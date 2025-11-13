@@ -7,10 +7,7 @@ const container: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.12,
-      when: "beforeChildren",
-    },
+    transition: { staggerChildren: 0.12, when: "beforeChildren" },
   },
 };
 
@@ -91,12 +88,7 @@ export default function Hero() {
             animate="show"
             whileHover="hover"
           >
-            <motion.span
-              className="text-primary/50"
-              style={{ pointerEvents: "none" }}
-            >
-              Hero image
-            </motion.span>
+            <span className="text-primary/50">Hero image</span>
           </motion.div>
         </motion.div>
       </motion.div>
