@@ -1,39 +1,101 @@
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
 
 export default function Hero() {
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.12,
+        when: "beforeChildren",
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 10 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0, y: 8, scale: 0.995 },
+    show: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { duration: 0.7, ease: "easeOut" },
+    },
+    hover: { scale: 1.03, transition: { duration: 0.25 } },
+  };
+
   return (
     <section className="pt-16 pb-12">
-      <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-8 items-center">
-        <div>
-          <h1 className="text-4xl lg:text-5xl font-heading leading-tight">
+      <motion.div
+        className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-8 items-center"
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.25 }}
+      >
+        <motion.div variants={item}>
+          <motion.h1
+            className="text-4xl lg:text-5xl font-heading leading-tight"
+            variants={item}
+          >
             Modern craft. Curated furniture & interiors.
-          </h1>
-          <p className="mt-6 text-lg text-gray-700 max-w-prose">
+          </motion.h1>
+
+          <motion.p
+            className="mt-6 text-lg text-gray-700 max-w-prose"
+            variants={item}
+          >
             Handcrafted furniture with a focus on material, detail and
             timelessness. Explore the collection or book a consultation.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a
+          </motion.p>
+
+          <motion.div className="mt-8 flex flex-wrap gap-3" variants={item}>
+            <motion.a
               href="#product"
-              className="px-5 py-3 rounded-md bg-accent text-white"
+              className="px-5 py-3 rounded-md bg-accent text-white inline-block"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ type: "spring", stiffness: 300, damping: 18 }}
             >
               Shop Collection
-            </a>
-            <a
+            </motion.a>
+
+            <motion.a
               href="#contact"
-              className="px-5 py-3 rounded-md border border-border"
+              className="px-5 py-3 rounded-md border border-border inline-block"
+              whileHover={{ y: -3, scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ duration: 0.18 }}
             >
               Book Consultation
-            </a>
-          </div>
-        </div>
+            </motion.a>
+          </motion.div>
+        </motion.div>
 
-        <div className="hidden lg:block">
-          <div className="w-full h-72 bg-secondary rounded-lg border border-border flex items-center justify-center">
-            <span className="text-primary/50">Hero image</span>
-          </div>
-        </div>
-      </div>
+        <motion.div className="hidden lg:block" variants={item}>
+          <motion.div
+            className="w-full h-72 bg-secondary rounded-lg border border-border flex items-center justify-center overflow-hidden"
+            variants={imageVariants}
+            initial="hidden"
+            animate="show"
+            whileHover="hover"
+          >
+            <motion.span
+              className="text-primary/50"
+              style={{ pointerEvents: "none" }}
+            >
+              Hero image
+            </motion.span>
+          </motion.div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
