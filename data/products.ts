@@ -15,7 +15,7 @@ export const products: Product[] = [
     price: 35000,
     description:
       "Handcrafted bench in oak with upholstered seat. Finishes available on request.",
-    images: ["/placeholder.png", "/placeholder.png", "/placeholder.png"],
+    images: ["/placeholder.png", "/sketch.png", "/detail2.png"],
   },
   {
     id: 2,
