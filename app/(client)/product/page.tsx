@@ -3,7 +3,6 @@
 import React from "react";
 import { Heart } from "lucide-react";
 
-
 const WaveAccent = () => (
   <svg
     className="w-full h-2 my-1"
@@ -21,7 +20,6 @@ const WaveAccent = () => (
   </svg>
 );
 
-
 const productDetails = {
   name: "Signature Low-Seating Bench",
   sku: "KK-SB-2024",
@@ -33,11 +31,11 @@ const productDetails = {
     { label: "MATERIAL", value: "Oak Wood, Velvet Fabric" },
   ],
   images: {
-    main: "/products/main.png",
-    sketch: "/products/sketch.png",
-    detail1: "/products/detail1.png",
-    detail2: "/products/detail2.png",
-    sideView: "/products/side-view.png",
+    main: "/products/color-1.png",
+    sketch: "/products/bw-1.png",
+    detail1: "/products/color-3.png",
+    detail2: "/products/color-2.png",
+    sideView: "/products/bw-2.png",
   },
 };
 
@@ -47,7 +45,6 @@ const Page = () => {
 
   return (
     <div className="min-h-screen bg-white font-['Inter'] text-gray-800">
-    
       <header className="max-w-6xl mx-auto px-4 pt-8 sm:pt-12 flex justify-between items-start">
         <h1 className="text-sm text-gray-700 font-medium">
           {productDetails.name}{" "}
@@ -60,9 +57,7 @@ const Page = () => {
         />
       </header>
 
-      
       <section className="max-w-6xl mx-auto px-4 mt-8 sm:mt-12 grid md:grid-cols-2 gap-10">
-        
         <div className="flex flex-col items-center md:items-start">
           <div className="w-full aspect-[16/10] border border-gray-200 rounded-sm overflow-hidden shadow-md">
             <img
@@ -72,23 +67,23 @@ const Page = () => {
             />
           </div>
 
-        
           <div className="flex space-x-2 mt-4">
-            {["#D5AD3C", "#59508C", "#3A7C5C", "#ADD8E6"].map((color, index) => (
-              <div
-                key={index}
-                className={`w-10 h-10 rounded-sm border-2 cursor-pointer ${
-                  index === 0
-                    ? "border-gray-800"
-                    : "border-transparent hover:border-gray-400"
-                }`}
-                style={{ backgroundColor: color }}
-              />
-            ))}
+            {["#D5AD3C", "#59508C", "#3A7C5C", "#ADD8E6"].map(
+              (color, index) => (
+                <div
+                  key={index}
+                  className={`w-10 h-10 rounded-sm border-2 cursor-pointer ${
+                    index === 0
+                      ? "border-gray-800"
+                      : "border-transparent hover:border-gray-400"
+                  }`}
+                  style={{ backgroundColor: color }}
+                />
+              )
+            )}
           </div>
         </div>
 
-   
         <div className="hidden md:block">
           <div className="w-full aspect-[16/10] border-b border-gray-300">
             <img
@@ -100,9 +95,7 @@ const Page = () => {
         </div>
       </section>
 
-    
       <section className="max-w-6xl mx-auto px-4 mt-16 sm:mt-24 grid md:grid-cols-2 gap-10">
-     
         <div>
           <h2 className="text-xl font-medium uppercase text-gray-800 mb-2">
             PRODUCT INFO
@@ -128,13 +121,12 @@ const Page = () => {
           </div>
         </div>
 
-      
         <div className="grid grid-cols-2 gap-4 h-full">
           <div className="col-span-1 h-40 sm:h-52 border border-gray-200 rounded-sm overflow-hidden">
             <img
               src={productDetails.images.detail1}
               alt="Detail 1"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
             />
           </div>
 
@@ -154,22 +146,22 @@ const Page = () => {
             />
           </div>
 
-       
           <div className="col-span-2 mt-4">
-            <button
-              className="px-8 py-3 ml-105 text-sm font-semibold tracking-wider text-white rounded-full shadow-md transition duration-300 w-full md:w-auto"
-              style={{
-                backgroundColor: buttonColor,
-                border: `1px solid ${accentColor}`,
-              }}
-            >
-              INQUIRE
-            </button>
+            <div className="col-span-2 mt-4">
+             <button
+  className="px-8 py-3 ml-105 text-sm font-semibold tracking-wider text-black rounded-full shadow-md transition duration-300 w-full md:w-auto hover:bg-[#D5AD3C] hover:scale-105 cursor-pointer"
+  style={{
+    border: `1px solid ${accentColor}`,
+  }}
+>
+  INQUIRE
+</button>
+
+            </div>
           </div>
         </div>
       </section>
 
-     
       <section className="max-w-6xl mx-auto px-4 pt-20 sm:pt-32 pb-16">
         <h2 className="text-xl font-medium uppercase text-gray-800 mb-2">
           PRODUCTS THIS CAN PAIR WITH
@@ -189,8 +181,6 @@ const Page = () => {
           ))}
         </div>
       </section>
-
-      
     </div>
   );
 };

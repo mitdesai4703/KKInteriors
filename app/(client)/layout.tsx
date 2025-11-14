@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter, Manrope } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -34,14 +35,12 @@ export default function RootLayout({
       <body
         className={`${cormorant.variable} ${inter.variable} ${manrope.variable} antialiased min-h-screen flex flex-col`}
       >
-      
-        <Header />
-
-       
-        <main className="flex-grow">{children}</main>
-
-       
-        <Footer />
+        {/* ✅ ClerkProvider must be inside <body> */}
+        <ClerkProvider>
+          <Header />
+          <main className="flex-grow">{children}</main>
+          <Footer />
+        </ClerkProvider>
       </body>
     </html>
   );
