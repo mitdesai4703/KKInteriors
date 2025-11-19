@@ -1,10 +1,8 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  reactCompiler: true,
-
+/** @type {import("next").NextConfig} */
+const nextConfig = {
   experimental: {
-    optimizeCss: false,
+    optimizeCss: false, // Disable LightningCSS
+    css: false          // Disable built-in CSS optimizer
   },
 };
 
